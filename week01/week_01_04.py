@@ -1,4 +1,5 @@
-#small change in the beginning of the file from iMac
+#here is fist week programm
+
 #import random module
 import random
 
@@ -10,7 +11,7 @@ nearGreat = random.randint((greatNumber - 3),(greatNumber + 3))
 #changin it if it is the same number
 if (nearGreat == greatNumber):
     nearGreat += 1
-    
+
 #asking user to enter number and converting it to integer.
 print ("Guess number from 1 to 100.\nIf you will guess right I give you answer to life, the universe and everything.\n(Additional information for cheaters: magic number somewhere near",nearGreat,")\nReady? Let's play:")
 
@@ -33,7 +34,7 @@ while (gameOver == 0):
 
         #checking if number is in range
         if (userGuess >= 1 and userGuess <= 100):
-        
+
             if (userGuess > greatNumber):
                 print ("Too big. Try again:")
             elif (userGuess < greatNumber):
@@ -52,15 +53,15 @@ while (gameOver == 0):
                     nearGreat = random.randint((greatNumber - 1),(greatNumber + 1))#Narrowing the range of help
                     if (nearGreat == greatNumber):
                         nearGreat += 1
-                    
-                    print ("Cheater, cheater, pumpkin eater. Here is some info for you.\nThe number is very close to",nearGreat) 
+
+                    print ("Cheater, cheater, pumpkin eater. Here is some info for you.\nThe number is very close to",nearGreat)
         else:
             print ("Use numbers from 1 to 100. Let's try again:")
-            
+
     else:
         print ("I told you to enter a positive number number. Not some nonsense.")
-        gameOver = 1 #if user enter not a positive number the game is over 
-        
+        gameOver = 1 #if user enter not a positive number the game is over
+
 else:
     print ("Game Over")
 
