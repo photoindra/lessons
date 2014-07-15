@@ -1,3 +1,4 @@
+#small change in the beginning of the file from iMac
 #import random module
 import random
 
