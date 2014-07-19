@@ -6,16 +6,17 @@
 # http://heller.ru/course/viewtopic.php?f=7&t=24
 
 def maximum_prime(n):
-    x = n-1
-    for x in range(2,n-1):
-        if (n%x == 0):
-            result = x
+    mlt = n - 1
+    result = n
+    while (result != 1 and mlt != 1):
+        if (result%mlt != 0):
+            mlt -= 1
         else:
-            x= x-1
-
-
-
+            result = mlt
+            mlt -= 1
+            continue
+        continue
     return result
 
-x = maximum_prime(50)
-print ("Biggest prime: " +str(x))
+x = maximum_prime(70)
+print ("Biggest prime is: " +str(x))
