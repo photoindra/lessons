@@ -20,7 +20,7 @@ def generatePhones(n):
 
     while len(phoneBook) < bookSize:
 
-        phoneNumber = random.randint(0000000, 9999999)
+        phoneNumber = random.randint(1000000, 9999999)
 
         if phoneNumber not in phoneBook:
             personName = ''.join(random.choice(string.ascii_lowercase) for i in range(random.randint(4,10)))
@@ -32,6 +32,8 @@ def generatePhones(n):
 
     return phoneBook
 
-print (generatePhones(10))
+numOfPhones = 100000
+listOfPhones = generatePhones(numOfPhones)
+# print (listOfPhones)
 
 
