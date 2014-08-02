@@ -10,7 +10,6 @@
 # week_03_04_part_a -------------
 
 def readingToDic():
-
     dic = {}
     with open("phone_numbers.txt") as f:
         for line in f:
@@ -65,14 +64,14 @@ myListC = readingToSortedList()
 
 # getting name from dictionary
 def get_name_from_dic(phone):
-    phoneBook = readingToDic()
+    phoneBook = myDic
     if phone in phoneBook:
         name = phoneBook[phone]
         return name
 
 def get_name_from_list_b(phone):
     """getting name from unorded list using simple if"""
-    phoneBook = readingToList()
+    phoneBook = myListB
     n = 0
     while n != len(phoneBook):
         if phoneBook[n][0] == phone:
@@ -80,15 +79,12 @@ def get_name_from_list_b(phone):
             return name
             break
         n += 1
-# Another way from github can be something like:
-# Without dict, a generator would give you:
-# next((item[1] for item in l if item[0] == search), None)
-# next returns the second argument (None) if the generator is empty
+
 
 def get_name_from_list_c(phone):
     """getting name from sorted list using bisect"""
     from bisect import bisect_left
-    phoneBook = readingToSortedList()
+    phoneBook = myListC
 
     tempListOfPhones = [tup[0] for tup in phoneBook]
     name = phoneBook[bisect_left(tempListOfPhones, phone)][1]
@@ -96,7 +92,7 @@ def get_name_from_list_c(phone):
 
 def get_name_from_list_d(phone):
     """getting name from sorted list using half-list"""
-    phoneBook = readingToSortedList()
+    phoneBook = myListC
 
     center = phoneBook[len(phoneBook)//2]
     phoneBookLow = phoneBook[0:int(len(phoneBook)//2)]
@@ -112,7 +108,9 @@ def get_name_from_list_d(phone):
     return center[1]
 
 
-searchNumber = 6911219
+searchNumber = 7187970
+
+
 print ("Getting name from dictionary:")
 print ("Phone number belongs to " + str(get_name_from_dic(searchNumber).capitalize()) + "\n")
 
@@ -127,13 +125,16 @@ print ("Phone number belongs to " + str(get_name_from_list_d(searchNumber).capit
 
 import time
 
+
+
 def compare_functions(test01, test02, test03, test04, arg):
+
   i = 0
   t1 = 0
   t2 = 0
   t3 = 0
   t4 = 0
-  while i < 10:
+  while i < 100:
     last_time = time.clock()
     test01(arg)
     t1 += time.clock() - last_time
